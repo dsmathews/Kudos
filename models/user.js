@@ -7,11 +7,6 @@ var UserSchema = new Schema({
     trim: true,
     required: "Username is Required"
   },
-  password: {
-    type: String,
-    trim: true,
-    required: "Password is Required"
-  },
   kudos: [
     {
       type: Schema.Types.ObjectId,
