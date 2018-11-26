@@ -1,0 +1,30 @@
+{
+  "name": "kudos",
+  "version": "1.0.0",
+  "description": "Thank you/encouragement note application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsmathews/Kudos.git"
+  },
+  "keywords": [
+    "Kudos",
+    "Thank",
+    "You"
+  ],
+  "author": "Scott Mathews",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dsmathews/Kudos/issues"
+  },
+  "homepage": "https://github.com/dsmathews/Kudos#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.13",
+    "path": "^0.12.7"
+  }
+}
