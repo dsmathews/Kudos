@@ -26,13 +26,62 @@
         <i class="far fa-thumbs-up fa-2x"></i>
     </nav> -->
     <div class="container">
-            <nav class="navbar navbar-light bg-info">
-                    <span class="navbar-brand mb-0 h1">Kudos!</span>
-                    <i class="far fa-thumbs-up fa-2x"></i>
-                </nav>
+        <nav class="navbar navbar-light bg-info">
+            <span class="navbar-brand mb-0 h1">Kudos!</span>
+            <i class="far fa-thumbs-up fa-2x"></i>
+        </nav>
         <div class="row">
-
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <button class="kudos-modal btn btn-info" type="button" data-toggle="modal" data-target="#kudoModal">Give
+                            Kudos</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9" id="kudos">
+            </div>
         </div>
+    </div>
+    <div class="modal fade bd-example-modal-lg" id="kudoModal" tabindex="-1" role="dialog" aria-labelledby="kudoModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel"> Give a Kudo! </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="messages"></div>
+                    <form>
+                        <div class="container form-group">
+                            <div class="row">
+                                <div class="col-lg-3 form-area">
+                                    <select name="kudo-from" id="kudo-from" class="form-control btn btn-secondary">
+                                        <option selected disabled value=''>Select Sender</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-5 form-area">
+                                    <input class='form-control' type="text" id="kudo-title" placeholder="Type a title!" />
+                                    <textarea class='form-control' type="text" id="kudo-body" rows="5" placeholder="Type a Message!"></textarea>
+                                </div>
+                                <div class="col-lg-3 form-area">
+                                    <select name="kudo-to" id="kudo-to" class="form-control btn btn-secondary">
+                                        <option selected disabled value=''>Select Receiver</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="send-kudo">Send Kudos!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     </div>
 </body>
