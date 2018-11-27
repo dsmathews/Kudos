@@ -1,10 +1,10 @@
 const User = require('../models/user');
-const Note = require('../models/kudos');
+const kudos = require('../models/kudos');
 
 module.exports = function (app) {
 
-  app.post('/api/user', function (req, res) {
-    User.find(req.body)
+  app.get('/api/user', function (req, res) {
+    User.find()
     .then(function (data) {
       res.json(data);
     })
@@ -34,16 +34,28 @@ module.exports = function (app) {
     });
   });
 
+  app.get('/api/kudos', function (req, res) {
+    kudos.find()
+    .then(function (data) {
+      res.json(data);
+    })
+    .catch(function (err) {
+      res.json(err);
+    });
+  });
+
   app.post('/api/kudos', function (req, res) {
     const userId = req.body.userId;
     const newEntry = {
       title: req.body.title,
-      body: req.body.body
+      body: req.body.body,
+      from: req.body.from,
+      to: req.body.to
     };
-
-    Note.create(newEntry)
-      .then(function (noteData) {
-      return User.findOneAndUpdate({_id: userId}, { $push: { notes: noteData._id } }, { new: true });
+    console.log(newEntry);
+    kudos.create(newEntry)
+      .then(function (kudosData) {
+      return user.findOneAndUpdate({_id: userId}, { $push: { kudos: kudosData._id } }, { new: true });
     })
     .then(function(userData) {
       res.json(userData);
